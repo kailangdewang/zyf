@@ -13,7 +13,7 @@
 
 ## 📜 开源协议
 
-本项目采用 [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/legalcode.txt) 协议开源，这意味着您可以：
+本项目采用 [GNU General Public License v3.0](LICENSE) 协议开源，这意味着您可以：
 
 共享 — 复制、发行本作品
 改编 — 修改、转换、基于本作品进行再创作
@@ -21,7 +21,7 @@
 
 署名 — 你必须注明原始作者（creeper145664）和出处，并提供原始协议链接
 非商业性使用 — 你不得将本作品用于商业用途
-简单来说，只要您不将它用于商业用途，并且署上原作者的名字，您可以将它用于任何用途（具体还请查看CC BY-NC 4.0 License）
+简单来说，只要您不将它用于商业用途，并且署上原作者的名字，您可以将它用于任何用途（具体还请查看GNU General Public License v3.0）
 
 ---
 
@@ -42,7 +42,7 @@
    - 提交前运行 `npm run lint` 确保无语法错误
 
 2. **版权声明**  
-   - 所有贡献内容默认采用与本项目一致的 [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/legalcode.txt) 协议
+   - 所有贡献内容默认采用与本项目一致的 [GNU General Public License v3.0] 协议
    - 引用第三方资源需提供合法授权证明
 
 3. **行为准则**  
@@ -73,9 +73,9 @@
 
 ### 版权与授权
 
-1. **项目许可证**：本项目采用 **[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)** 协议。任何人可自由使用、修改，但**禁止商业用途**，且必须**署名原作者**。
+1. **项目许可证**：本项目采用 **[GNU General Public License v3.0]协议。任何人可自由使用、修改，但**禁止商业用途**，且必须**署名原作者**。
 
-2. **贡献者授权**：通过 Pull Request 提交代码，即视为您同意将代码贡献在 **CC BY-NC 4.0** 下使用，并保留您的署名权。
+2. **贡献者授权**：通过 Pull Request 提交代码，即视为您同意将代码贡献在 **GNU General Public License v3.0** 下使用，并保留您的署名权。
 
 3. **项目决策**：技术路线与许可证变更由核心维护者提案，经社区讨论后执行。重大决策将公示 7 天征询意见。
 
