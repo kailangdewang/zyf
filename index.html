@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>湖北省襄阳市第四中学 高一(20)班 - 班级网站</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#8B5CF6',
+                        dark: '#1F2937',
+                        light: '#F3F4F6',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .text-gradient {
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+            .bg-blur {
+                backdrop-filter: blur(8px);
+            }
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-light to-blue-50 min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/80 bg-blur shadow-sm z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-r from-primary to-accent flex items-center justify-center">
+                            <i class="fas fa-chart-line text-white text-xl"></i>
+                        </div>
+                        <div class="ml-3">
+                            <span class="block text-sm font-semibold text-dark">湖北省襄阳市第四中学 高一(20)班</span>
+                            <span class="block text-xs text-gray-500">班级网站</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#" class="text-dark hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">首页</a>
+                        <a href="#class-info" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">班级介绍</a>
+                        <a href="#recent-activities" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">班级动态</a>
+                        <a href="Sidebar/Rules.html" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">班级规章</a>
+                        <a href="Sidebar/ClassStyle.html" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">班级风采</a>
+                        <a href="Sidebar/treasurebox.html" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">百宝箱</a>
+                        <a href="Sidebar/about.html" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">关于我们</a>
+                    </div>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 移动端菜单 -->
+<div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg rounded-b-lg absolute w-full">
+    <a href="#" class="text-gray-500 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">首页</a>
+    <a href="#class-info" class="text-dark hover:text-primary block px-3 py-2 rounded-md text-base font-medium">班级介绍</a>
+    <a href="#recent-activities" class="text-dark hover:text-primary block px-3 py-2 rounded-md text-base font-medium">班级动态</a>
+    <a href="Sidebar/Rules.html" class="text-dark hover:text-primary block px-3 py-2 rounded-md text-base font-medium">班级规章</a>
+    <a href="Sidebar/ClassStyle.html" class="text-dark hover:text-primary block px-3 py-2 rounded-md text-base font-medium">班级风采</a>
+    <a href="Sidebar/treasurebox.html" class="text-dark hover:text-primary block px-3 py-2 rounded-md text-base font-medium">百宝箱</a>
+    <a href="Sidebar/about.html" class="text-gray-500 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">关于我们</a>
+</div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="pt-32 pb-20 md:pt-40 md:pb-32 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent text-gradient">
+                    欢迎来到 湖北省襄阳市第四中学 高一(20)班 班级网站
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+                    这里是我们班级的数字家园，记录着我们的学习历程、成长点滴和精彩瞬间。让我们一起探索知识的海洋，共同书写青春的篇章。
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#class-info" class="btn-primary">
+                        <i class="fas fa-users mr-2"></i>
+                        班级风采
+                    </a>
+                    <a href="#recent-activities" class="btn-secondary">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        班级动态
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 班级信息 -->
+    <section id="class-info" class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-dark mb-4">班级风采</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        我们是一个充满活力、团结友爱的班集体，每个人都在这里发光发热，共同创造美好的回忆。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon bg-primary/10 text-primary mx-auto">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-dark mb-3">学业卓越</h3>
+                        <p class="text-gray-600">
+                            我们班级在学业上追求卓越，互相帮助，共同进步，在各类考试和竞赛中屡创佳绩。
+                        </p>
+                    </div>
+
+                    <div class="feature-card text-center">
+                        <div class="feature-icon bg-accent/10 text-accent mx-auto">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-dark mb-3">团结友爱</h3>
+                        <p class="text-gray-600">
+                            班级氛围和谐融洽，同学之间互相关心，团结友爱，形成了良好的班级文化。
+                        </p>
+                    </div>
+
+                    <div class="feature-card text-center">
+                        <div class="feature-icon bg-secondary/10 text-secondary mx-auto">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-dark mb-3">全面发展</h3>
+                        <p class="text-gray-600">
+                            我们不仅注重学习成绩，还积极参与各类文体活动，实现德智体美劳全面发展。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-light rounded-xl p-8 shadow-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="66">0</div>
+                            <div class="stat-label">班级人数</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="100">0</div>
+                            <div class="stat-label">及格率(%)</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="0">0</div>
+                            <div class="stat-label">获奖次数</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="0">0</div>
+                            <div class="stat-label">活动举办</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 最近通报 -->
+    <section id="recent-activities" class="py-16 bg-light">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-dark mb-4">班级动态</h2>
+                    <p class="text-xl text-gray-600">
+                        了解我们班级的最新活动和重要通知
+                    </p>
+                </div>
+
+                <div id="notifications-container" class="space-y-4">
+                    <!-- 通知内容将由JavaScript动态填充 -->
+                </div>
+
+                <div class="text-center mt-8">
+                    <a href="Sidebar/notice.html" class="btn-primary">
+                        点击查看更多动态 <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">联系我们</h2>
+                <p class="text-xl text-gray-600 mb-8">
+                    如有任何问题或建议，欢迎通过邮箱联系我们->3803725808@qq.com(朱渝帆)
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-r from-primary to-accent flex items-center justify-center">
+                            <i class="fas fa-chart-line text-white text-xl"></i>
+                        </div>
+                        <div class="ml-3">
+                            <span class="block text-sm font-semibold text-white">湖北省襄阳市第四中学 高一(20)班</span>
+                            <span class="block text-xs text-gray-400">班级网站</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        专业的班级管理与交流平台，助力班级建设与同学成长。<br>
+                        Developed and Managed by ZhuYufan<br>
+                        Based on ClassWebsite V2.5 📚<br>
+                        Powered by HTML and Markdown<br>
+                        Hosted by Github
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">快速链接</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">首页</a></li>
+                        <li><a href="#class-info" class="text-gray-400 hover:text-white transition-colors duration-200">班级介绍</a></li>
+                        <li><a href="#recent-activities" class="text-gray-400 hover:text-white transition-colors duration-200">班级动态</a></li>
+                        <li><a href="Sidebar/Rules.html" class="text-gray-400 hover:text-white transition-colors duration-200">班级规章</a></li>
+                        <li><a href="Sidebar/about.html" class="text-gray-400 hover:text-white transition-colors duration-200">关于我们</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">资源中心</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">班级相册</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">学习资源</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">活动记录</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">荣誉展示</a></li>
+                        <li><a href="Sidebar/notice.html" class="text-gray-400 hover:text-white transition-colors duration-200">通知公告</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">联系信息</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gray-400 mr-2"></i>
+                            <span class="text-gray-400">联系管理员->3803725808@qq.com(朱渝帆)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                    © 2026 湖北省襄阳市第四中学 高一(20)班 保留所有权利。
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <style>
+        /* 按钮样式 */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            border: 1px solid transparent;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 0.375rem;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            background-image: linear-gradient(to right, #3B82F6, #8B5CF6);
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 300ms;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        .btn-primary:hover {
+            --tw-bg-opacity: 0.9;
+            background-image: linear-gradient(to right, rgb(59 130 246 / 0.9), rgb(139 92 246 / 0.9));
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            transform: translate(-0.125rem, -0.125rem);
+        }
+
+        .btn-primary:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), 0 0 #0000;
+            --tw-ring-opacity: 1;
+            --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
+            --tw-ring-offset-width: 2px;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            border: 1px solid rgb(209 213 219 / 1);
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 0.375rem;
+            --tw-text-opacity: 1;
+            color: rgb(31 41 55 / var(--tw-text-opacity));
+            background-color: #fff;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 300ms;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgb(249 250 251 / 1);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            transform: translate(-0.125rem, -0.125rem);
+        }
+
+        .btn-secondary:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), 0 0 #0000;
+            --tw-ring-opacity: 1;
+            --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
+            --tw-ring-offset-width: 2px;
+        }
+
+        .btn-accent {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            border: 1px solid transparent;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 0.375rem;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            background-color: #8B5CF6;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 300ms;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        .btn-accent:hover {
+            --tw-bg-opacity: 0.9;
+            background-color: rgb(139 92 246 / var(--tw-bg-opacity));
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            transform: translate(-0.125rem, -0.125rem);
+        }
+
+        .btn-accent:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), 0 0 #0000;
+            --tw-ring-opacity: 1;
+            --tw-ring-color: rgb(139 92 246 / var(--tw-ring-opacity));
+            --tw-ring-offset-width: 2px;
+        }
+
+        /* 功能卡片样式 */
+        .feature-card {
+            background-color: #fff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            border: 1px solid rgb(243 244 246 / 1);
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 300ms;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .feature-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        /* 统计数字样式 */
+        .stat-card {
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            background-image: linear-gradient(to bottom right, #fff, #f9fafb);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 300ms;
+        }
+
+        .stat-card:hover {
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        .stat-number {
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+            font-weight: 700;
+            --tw-text-opacity: 1;
+            color: rgb(59 130 246 / var(--tw-text-opacity));
+            margin-bottom: 0.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .stat-number {
+                font-size: 2.25rem;
+                line-height: 2.5rem;
+            }
+        }
+
+        .stat-label {
+            font-weight: 500;
+            --tw-text-opacity: 1;
+            color: rgb(75 85 99 / var(--tw-text-opacity));
+        }
+
+        /* 联系图标样式 */
+        .contact-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 9999px;
+            background-color: #F3F4F6;
+            --tw-text-opacity: 1;
+            color: rgb(59 130 246 / var(--tw-text-opacity));
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 300ms;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        .contact-icon:hover {
+            background-color: #3B82F6;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+    </style>
+
+    <!-- ===== 直接整段替换原来的 <script> 标签即可 ===== -->
+<script>
+/* =========================
+   0. 数据区（带 level & path）
+========================= */
+const notifications = [
+    {
+        title: '关于年级在2026.01.14分班的通知',
+        date: '2026-01-14',
+        level: 3,   // 通报
+        path: 'article/2026013101.html'
+    },
+    {
+        title: '湖北省襄阳市第四中学高一(20)班课程表现已发布',
+        date: '2026-01-23',
+        level: 2,   // 报告
+        path: 'article/2026013102.html'
+    },
+    {
+        title: '关于湖北省襄阳市第四中学高一(20)班班委会成员公布的通知',
+        date: '2026-01-25',
+        level: 3,
+        path: 'article/2026013103.html'
+    },
+];
+
+/* =========================
+   1. 工具：时间排序（倒序）
+========================= */
+function sortByDateDesc(arr) {
+    return arr.sort((a, b) => new Date(b.date) - new Date(a.date));
+}
+
+/* =========================
+   2. 工具：根据等级返回图标类名 & 颜色
+========================= */
+function getLevelMeta(level) {
+    switch (level) {
+        case 3: return { icon: 'fa-star', color: 'text-yellow-500 bg-yellow-100' }; // 活动/表彰
+        case 2: return { icon: 'fa-file-alt', color: 'text-blue-500 bg-blue-100' }; // 报告/公示
+        default: return { icon: 'fa-info-circle', color: 'text-gray-500 bg-gray-100' }; // 普通
+    }
+}
+
+/* =========================
+   3. 通知渲染函数
+========================= */
+function renderNotifications() {
+    const container = document.getElementById('notifications-container');
+    if (!container) return;
+
+    container.innerHTML = '';
+    const sorted = sortByDateDesc([...notifications]); // 拷贝后排序
+
+    sorted.forEach(item => {
+        const meta = getLevelMeta(item.level);
+        const div = document.createElement('div');
+        div.className = 'flex flex-col sm:flex-row sm:items-center justify-between px-6 py-4 bg-gray-50 rounded-lg border border-gray-200 hover:bg-gray-100 transition';
+        div.innerHTML = `
+            <div class="flex items-start">
+                <!-- 左侧图标 -->
+                <div class="flex-shrink-0 w-10 h-10 rounded-full ${meta.color} flex items-center justify-center mr-4">
+                    <i class="fas ${meta.icon}"></i>
+                </div>
+                <!-- 右侧文字 -->
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900">${item.title}</h3>
+                    <p class="text-sm text-gray-500 mt-1">${item.date}</p>
+                </div>
+            </div>
+            <a href="${item.path}" class="mt-3 sm:mt-0 inline-flex items-center text-primary hover:text-accent font-medium">
+                点击查看 <i class="fas fa-arrow-right ml-2"></i>
+            </a>`;
+        container.appendChild(div);
+    });
+}
+
+/* =========================
+   4. 统计数字动画
+========================= */
+function animateNumbers() {
+    document.querySelectorAll('.stat-number').forEach(el => {
+        const target = +el.dataset.target;
+        if (!target) return;
+        const duration = 2000, stepTime = 20;
+        const totalSteps = duration / stepTime;
+        const stepSize = target / totalSteps;
+        let cur = 0;
+        const timer = setInterval(() => {
+            cur += stepSize;
+            if (cur >= target) { cur = target; clearInterval(timer); }
+            el.textContent = target > 1000 ? Math.floor(cur).toLocaleString() : Math.floor(cur);
+        }, stepTime);
+    });
+}
+
+/* =========================
+   5. 导航栏滚动 + 返回顶部
+========================= */
+const navbar = document.getElementById('navbar');
+const backToTop = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('shadow-md');
+        navbar.classList.remove('shadow-sm');
+    } else {
+        navbar.classList.remove('shadow-md');
+        navbar.classList.add('shadow-sm');
+    }
+    if (window.scrollY > 300) {
+        backToTop.classList.remove('opacity-0', 'invisible');
+        backToTop.classList.add('opacity-100', 'visible');
+    } else {
+        backToTop.classList.add('opacity-0', 'invisible');
+        backToTop.classList.remove('opacity-100', 'visible');
+    }
+});
+
+backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+/* =========================
+   6. 移动端菜单
+========================= */
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+/* =========================
+   7. 页面初始化
+========================= */
+document.addEventListener('DOMContentLoaded', () => {
+    renderNotifications();                       // 1. 通知渲染（已排序+图标）
+    const statCard = document.querySelector('.stat-card');
+    if (statCard) {                              // 2. 统计动画
+        const statsSection = statCard.parentElement.parentElement;
+        const observer = new IntersectionObserver(
+            entries => entries.forEach(en => { if (en.isIntersecting) { animateNumbers(); observer.unobserve(en.target); } }),
+            { threshold: 0.5 }
+        );
+        observer.observe(statsSection);
+    }
+});
+</script>
+</body></html>
