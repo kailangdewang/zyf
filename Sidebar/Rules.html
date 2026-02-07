@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>班级规章 - 湖北省襄阳市第四中学 高一(20)班 班级网站</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#8B5CF6',
+                        dark: '#1F2937',
+                        light: '#F3F4F6',
+                        warning: '#F59E0B',
+                        danger: '#EF4444'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .text-gradient {
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.15);
+            }
+            .rule-list-item {
+                position: relative;
+                padding-left: 1.875rem;
+            }
+            .rule-list-item::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0.5rem;
+                width: 0.75rem;
+                height: 0.75rem;
+                border-radius: 50%;
+                background-color: #3B82F6;
+            }
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-light to-blue-50 min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur shadow-sm z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-r from-primary to-accent flex items-center justify-center">
+                            <i class="fas fa-chart-line text-white text-xl"></i>
+                        </div>
+                        <div class="ml-3">
+                            <span class="block text-sm font-semibold text-dark">湖北省襄阳市第四中学 高一(20)班</span>
+                            <span class="block text-xs text-gray-500">班级网站</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="../index.html" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">首页</a>
+                        <a href="../index.html#class-info" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">班级介绍</a>
+                        <a href="../index.html#recent-activities" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">班级动态</a>
+                        <a href="#" class="text-dark hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 border-b-2 border-primary">班级规章</a>
+                        <a href="ClassStyle.html" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">班级风采</a>
+                        <a href="treasurebox.html" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">百宝箱</a>
+                        <a href="about.html" class="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">关于我们</a>
+                    </div>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg rounded-b-lg absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="../index.html" class="text-gray-500 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">首页</a>
+                <a href="../index.html#class-info" class="text-gray-500 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">班级介绍</a>
+                <a href="../index.html#recent-activities" class="text-gray-500 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">班级动态</a>
+                <a href="#" class="text-dark hover:text-primary block px-3 py-2 rounded-md text-base font-medium bg-blue-50">班级规章</a>
+                <a href="ClassStyle.html" class="text-gray-500 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">班级风采</a>
+                <a href="treasurebox.html" class="text-gray-500 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">百宝箱</a>
+                <a href="about.html" class="text-gray-500 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">关于我们</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="pt-32 pb-16 md:pt-40 md:pb-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="container mx-auto">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent text-gradient">
+                    班级规章
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+                    构建和谐、有序、积极向上的班级环境，促进同学全面发展与班级团结
+                </p>
+                <div class="inline-block bg-blue-50 text-primary px-4 py-2 rounded-full text-sm font-medium">
+                    <i class="fas fa-users mr-2"></i>依据《中学生守则》《校规校纪》及班级实际情况制定
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要内容区域 -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="container mx-auto">
+        <div class="max-w-6xl mx-auto">
+            <div class="min-h-[60vh] flex items-center justify-center text-center">
+                <div class="p-8">
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gradient bg-gradient-to-r from-primary to-accent">
+                        2025级年级誓词<br>
+                        <br>
+                        我是一名光荣的襄阳四中人,我庄严宣誓:<br>
+                        恪守“勤奋、严谨、团结、进取”的校训,<br>
+                        牢记“六知、六爱、六荣”年级文化,<br>
+                        用勤奋浇灌学业,用踏实铸就辉煌,<br>
+                        用激情点燃人生,用坚持砥砺品格,<br>
+                        成就最好的自己,服务祖国和人民,<br>
+                        严管实做,勤学精思;追求卓越,臻于至善;<br>
+                        我信我行,我拼我赢!我一定行,我一定赢!
+                    </h2>
+                    <p class="text-xl md:text-2xl text-gray-700 mt-6 max-w-3xl mx-auto">
+                        <br>
+                        <br>
+                        <br>
+                        遵守班级规章，共建优秀班集体，展现高一(20)班学子风采！
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-r from-primary to-accent flex items-center justify-center">
+                            <i class="fas fa-chart-line text-white text-xl"></i>
+                        </div>
+                        <div class="ml-3">
+                            <span class="block text-sm font-semibold text-white">湖北省襄阳市第四中学 高一(20)班</span>
+                            <span class="block text-xs text-gray-400">班级网站</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        专业的班级管理与交流平台，助力班级建设与同学成长。<br>
+                        Developed and Managed by ZhuYufan<br>
+                        Based on ClassWebsite V2.5 📚<br>
+                        Powered by HTML and Markdown<br>
+                        Hosted by Github
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">快速链接</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-400 hover:text-white transition-colors duration-200">首页</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">积分查询</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">数据分析</a></li>
+                        <li><a href="#match-reports" class="text-gray-400 hover:text-white transition-colors duration-200">比赛报表</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">班级规章</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">关于我们</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">资源中心</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">使用指南</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">常见问题</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">学习资料</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">更新日志</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">规则附件下载</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">联系信息</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gray-400 mr-2"></i>
+                            <span class="text-gray-400">联系管理员->3803725808@qq.com(朱渝帆)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                    © 2026 湖北省襄阳市第四中学 高一(20)班 保留所有权利。
+                </p>
+            </div>
+        </div>
+    </footer>
+<script>
+    document.getElementById('dl').onclick = () => {
+          // 使用本地文件路径
+          const url = '../document/9/北大队积分表.pdf';
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = '北大队积分表模板.pdf';   // 指定保存名
+          a.click();
+        };
+    document.getElementById('dl1').onclick = () => {
+          // 使用本地文件路径
+          const url = '../document/9/清华队积分表.pdf';
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = '清华队积分表模板.pdf';   // 指定保存名
+          a.click();
+        };
+    document.getElementById('dl2').onclick = () => {
+          // 使用本地文件路径
+          const url = '../document/9/复核更正受理书.docx';
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = '复核更正受理书.docx';   // 指定保存名
+          a.click();
+        };
+
+    document.getElementById('dl3').onclick = () => {
+          // 使用本地文件路径
+          const url = '../document/9/驳回复核书.docx';
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = '驳回复核书.docx';   // 指定保存名
+          a.click();
+        };
+    document.getElementById('dl4').onclick = () => {
+          // 使用本地文件路径
+          const url = '../document/9/月度两队总结统计书.docx';
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = '月度两队总结统计书.docx';   // 指定保存名
+          a.click();
+        };
+    document.getElementById('dl5').onclick = () => {
+          // 使用本地文件路径
+          const url = '../document/9/统计员数据审核报告.docx';
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = '统计员数据审核报告.docx';   // 指定保存名
+          a.click();
+        };
+    document.getElementById('dl6').onclick = () => {
+          // 使用本地文件路径
+          const url = '../document/9/更正声明复核通知书.docx';
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = '更正声明复核通知书.docx';   // 指定保存名
+          a.click();
+        };
+    document.getElementById('dl7').onclick = () => {
+          // 使用本地文件路径
+          const url = '../document/9/复核更正申请书.docx';
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = '复核更正申请书.docx';   // 指定保存名
+          a.click();
+        };
+</script>
